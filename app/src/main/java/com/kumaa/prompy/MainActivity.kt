@@ -7,7 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.kumaa.prompy.ui.screen.onBoarding.OnBoarding2
+import com.kumaa.prompy.ui.screen.login.LoginScreen
 import com.kumaa.prompy.ui.theme.PrompyTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +20,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    OnBoarding2(modifier = Modifier)
+                    LoginScreen(modifier = Modifier)
                 }
             }
         }
