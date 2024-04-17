@@ -18,7 +18,6 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.AnnotatedString
@@ -41,7 +40,7 @@ fun OnBoarding(modifier: Modifier = Modifier) {
             modifier = modifier.fillMaxWidth()
         ){
             ClickableText(
-                style = MaterialTheme.typography.labelLarge,
+                style = MaterialTheme.typography.labelLarge.copy(color = MaterialTheme.colorScheme.onSurface),
                 text = AnnotatedString(stringResource(R.string.skip)),
                 onClick = { /*TODO*/ },
             )
@@ -52,8 +51,8 @@ fun OnBoarding(modifier: Modifier = Modifier) {
             contentDescription = stringResource(R.string.onBoardingIllustration),
             Modifier.size(343.dp)
         )
+        Spacer(modifier = modifier.height(80.dp))
         Text(
-            modifier = modifier.padding(top = 80.dp),
             text = stringResource(R.string.onBoarding1Title),
             fontWeight = FontWeight.Bold,
             textAlign = TextAlign.Center,
@@ -75,7 +74,7 @@ fun OnBoarding(modifier: Modifier = Modifier) {
             ,
         ) {
             Text(
-                text = stringResource(R.string.getStarted),
+                text = stringResource(R.string.next),
                 color = Black,
                 fontWeight = FontWeight.Bold,
                 style = MaterialTheme.typography.bodyLarge,

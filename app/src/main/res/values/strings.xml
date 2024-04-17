@@ -2,11 +2,13 @@
     <string name="app_name">Prompy</string>
 
     <!-- OnBoarding Screen -->
+    <string name="next">Next</string>
     <string name="skip">Skip</string>
     <string name="getStarted">Get Started</string>
     <string name="onBoardingIllustration">OnBoarding Illustration</string>
     <string name="onBoarding1Title">A Teleprompter for Content Creator</string>
-    <string name="onBoarding1Desc">Take notes and read it without looks like you are reading it. Keep your eyes on the camera and be a content creator.</string>
+    <string name="onBoarding1Desc">Take notes and read it without looks like you are reading it. Keep your eyes on the camera and be a content creator</string>
     <string name="onBoarding2Title">New way to start Content Creating </string>
-    <string name="onBoarding2Desc">Now you can save read your script professionally.</string>
+    <string name="onBoarding2Desc">Now you can save and read your script professionally</string>
+
 </resources>
