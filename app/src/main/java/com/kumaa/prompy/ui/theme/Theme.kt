@@ -4,10 +4,10 @@ import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.dynamicDarkColorScheme
 import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
@@ -15,28 +15,71 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
 
 private val LightColorScheme = lightColorScheme(
     primary = Primary,
+    onPrimary = White,
+    primaryContainer = Cyan,
+    onPrimaryContainer = Black,
     secondary = Cyan,
-    tertiary = Pink40,
+    onSecondary = Black,
+    secondaryContainer = Cyan,
+    onSecondaryContainer = Black,
+    tertiary = Cyan,
+    onTertiary = Black,
+    tertiaryContainer = Cyan,
+    onTertiaryContainer = Black,
+    error = Error,
+    errorContainer = Error,
+    onError = White,
+    onErrorContainer = Black,
     background = White,
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    onBackground = Black,
+    surface = White,
+    onSurface = Black,
+    surfaceVariant = White,
+    onSurfaceVariant = Black,
+    outline = Gray,
+    inverseOnSurface = White,
+    inverseSurface = Black,
+    inversePrimary = Primary,
+    surfaceTint = Cyan,
+    outlineVariant = Gray,
+    scrim = Black,
 )
+
+private val DarkColorScheme = darkColorScheme(
+    primary = Primary,
+    onPrimary = White,
+    primaryContainer = Cyan,
+    onPrimaryContainer = Black,
+    secondary = Cyan,
+    onSecondary = Black,
+    secondaryContainer = Cyan,
+    onSecondaryContainer = Black,
+    tertiary = Cyan,
+    onTertiary = Black,
+    tertiaryContainer = Cyan,
+    onTertiaryContainer = Black,
+    error = Error,
+    errorContainer = Error,
+    onError = White,
+    onErrorContainer = Black,
+    background = Dark,
+    onBackground = White,
+    surface = Dark,
+    onSurface = White,
+    surfaceVariant = Black,
+    onSurfaceVariant = Gray,
+    outline = Gray,
+    inverseOnSurface = White,
+    inverseSurface = Black,
+    inversePrimary = Primary,
+    surfaceTint = Cyan,
+    outlineVariant = Gray,
+    scrim = Black,
+)
+
 
 @Composable
 fun PrompyTheme(
@@ -65,7 +108,9 @@ fun PrompyTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+        typography = typography,
+        content = content,
+        shapes = shape
     )
 }
+

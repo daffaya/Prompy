@@ -18,7 +18,7 @@ private val AppFontFamily = FontFamily(
     )
 )
 // Set of Material typography styles to start with
-val Typography = Typography(
+val typography = Typography(
     displayLarge = TextStyle(
         fontFamily = AppFontFamily,
         fontWeight = FontWeight.W400,
