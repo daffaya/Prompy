@@ -74,6 +74,7 @@ dependencies {
     implementation ("androidx.navigation:navigation-compose:2.7.7")
     androidTestImplementation ("androidx.navigation:navigation-testing:2.7.7")
 
-    //Icon
+    //Material Design
     implementation ("androidx.compose.material:material-icons-extended:1.6.5")
+    implementation("androidx.compose.material3:material3:1.2.1")
 }

@@ -42,6 +42,11 @@ import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
 import com.kumaa.prompy.R
+import com.kumaa.prompy.ui.components.EmailTextField
+import com.kumaa.prompy.ui.components.FacebookButton
+import com.kumaa.prompy.ui.components.FullNameTextField
+import com.kumaa.prompy.ui.components.GoogleButton
+import com.kumaa.prompy.ui.components.PasswordTextField
 import com.kumaa.prompy.ui.theme.Dark
 import com.kumaa.prompy.ui.theme.Gray
 import com.kumaa.prompy.ui.theme.Primary
@@ -49,7 +54,7 @@ import com.kumaa.prompy.ui.theme.shape
 
 @Composable
 fun SignUpScreen(modifier: Modifier = Modifier) {
-    var fullName by remember {mutableStateOf(TextFieldValue("")) }
+
     var email by remember {mutableStateOf(TextFieldValue("")) }
     var password by remember {mutableStateOf(TextFieldValue("")) }
     var passwordVisible by rememberSaveable {mutableStateOf(false)}
@@ -72,44 +77,11 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
             fontWeight = FontWeight.Black
         )
         Spacer(modifier.height(16.dp))
-        OutlinedTextField(
-            value = fullName,
-            onValueChange = {fullName = it},
-            label = { Text(text = stringResource(R.string.fullname))},
-            modifier = modifier.fillMaxWidth(),
-            singleLine = true,
-        )
+        FullNameTextField()
         Spacer(modifier.height(12.dp))
-        OutlinedTextField(
-            value = email,
-            onValueChange = {email = it},
-            label = { Text(text = stringResource(R.string.email))},
-            modifier = modifier.fillMaxWidth(),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email)
-        )
+        EmailTextField()
         Spacer(modifier.height(12.dp))
-        OutlinedTextField(
-            value = password,
-            onValueChange = {password = it},
-            label = { Text(text = stringResource(R.string.password))},
-            modifier = modifier.fillMaxWidth(),
-            singleLine = true,
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
-            visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
-            trailingIcon = {
-                val image = if (passwordVisible) Icons.Outlined.Visibility else Icons.Outlined.VisibilityOff
-                val description = if (passwordVisible) stringResource(R.string.hidepassword) else stringResource(
-                    R.string.showpassword
-                )
-                IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                    Icon(imageVector  = image, description,
-                        modifier
-                            .padding(end = 12.dp)
-                            .size(20.dp))
-                }
-            }
-        )
+        PasswordTextField()
         Spacer(modifier.height(24.dp))
         Button(
             onClick = { /*TODO*/ },
@@ -137,50 +109,8 @@ fun SignUpScreen(modifier: Modifier = Modifier) {
             horizontalArrangement = Arrangement.SpaceEvenly,
             modifier = Modifier.fillMaxWidth()
         ){
-            Button(
-                modifier = modifier
-                    .height(40.dp)
-                    .width(144.dp),
-                colors = ButtonDefaults.buttonColors(Gray),
-                shape = shape.extraSmall,
-                onClick = { /*TODO*/ }
-            ) {
-                Image(
-                    painterResource(R.drawable.ic_google),
-                    contentDescription = stringResource(R.string.google),
-                    modifier = modifier
-                        .size(16.dp)
-                )
-                Text(
-                    text = stringResource(R.string.google),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Medium,
-                    color = Dark,
-                    modifier = modifier.padding(start = 8.dp)
-                )
-            }
-            Button(
-                modifier = modifier
-                    .height(40.dp)
-                    .width(144.dp),
-                colors = ButtonDefaults.buttonColors(Gray),
-                shape = shape.extraSmall,
-                onClick = { /*TODO*/ }
-            ) {
-                Image(
-                    painterResource(R.drawable.ic_facebook),
-                    contentDescription = stringResource(R.string.facebook),
-                    modifier = modifier
-                        .size(16.dp)
-                )
-                Text(
-                    text = stringResource(R.string.facebook),
-                    style = MaterialTheme.typography.titleMedium,
-                    fontWeight = FontWeight.Medium,
-                    color = Dark,
-                    modifier = modifier.padding(start = 8.dp)
-                )
-            }
+            GoogleButton()
+            FacebookButton()
         }
         Spacer(modifier = modifier.height(40.dp))
         Row(
